@@ -23,8 +23,6 @@
 package lavalink.server;
 
 import lavalink.server.io.SocketServer;
-import lavalink.server.util.SimpleLogToSLF4JAdapter;
-import net.dv8tion.jda.utils.SimpleLog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -55,8 +53,5 @@ public class Launcher {
                 log.warn("Interrupted while stopping socket server", e);
             }
         }, "shutdown hook"));
-
-        SimpleLog.LEVEL = SimpleLog.Level.OFF;
-        SimpleLog.addListener(new SimpleLogToSLF4JAdapter());
     }
 }
